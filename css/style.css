@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 20px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.logo img {
+    height: 30px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.nav-links li a i {
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.dropdown-link:hover {
+    cursor: pointer;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.launcher-btn {
+    background-color: #fcaf17;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.search-btn, .profile-btn {
+    font-size: 18px;
+    color: #fff;
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 80px;
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: relative;
+    display: flex;
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trailer-info {
+    background-color: #000;
+    width: 30%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.trailer-text h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.trailer-text h1 {
+    font-size: 48px;
+    margin-bottom: 30px;
+}
+
+.watch-btn {
+    display: inline-block;
+    border: 2px solid #fff;
+    padding: 15px 30px;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.watch-btn:hover {
+    background-color: #fcaf17;
+    color: #000;
+}
+
+.trailer-nav {
+    padding: 20px 0;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.dot {
+    width: 35px;
+    height: 6px;
+    background-color: #444;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #fff;
+}
+
+/* Footer Elements */
+.coming-soon {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 8px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .trailer-info {
+        width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content {
+        flex-direction: column;
+    }
+    
+    .hero-image {
+        height: 70%;
+    }
+    
+    .trailer-info {
+        width: 100%;
+        height: 30%;
+        padding: 20px;
+    }
+    
+    .trailer-text h1 {
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+}
