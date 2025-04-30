@@ -1,5 +1,4 @@
-/* Reset and Base Styles */
-* {
+   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,14 +13,13 @@ a {
 body {
     background-color: #0b0b0b;
     color: #ffffff;
-    margin-top: 50px; /* Account for fixed header on mobile */
+    margin-top: 50px;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
 
-/* Layout variables */
 :root {
     --primary-color: #fcaf17;
     --dark-bg: #0b0b0b;
@@ -31,7 +29,6 @@ body {
     --mobile-header-height: 50px;
 }
 
-/* Header and Navigation with mobile-first approach */
 header {
     background-color: #000000;
     position: fixed;
@@ -50,7 +47,6 @@ header {
     background-color: #000;
 }
 
-/* Logo styles */
 .logo {
     text-align: center;
 }
@@ -60,7 +56,7 @@ header {
     vertical-align: middle;
 }
 
-/* Mobile hamburger menu */
+/* Menu hamburger untuk mobile */
 .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
@@ -79,7 +75,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Mobile profile icon */
 .mobile-profile {
     display: flex;
     align-items: center;
@@ -90,21 +85,19 @@ header {
     font-size: 16px;
 }
 
-/* Desktop nav links - hidden on mobile */
+/* Nav links desktop*/
 .nav-links {
     display: none;
     list-style: none;
     gap: 20px;
 }
 
-/* Desktop right nav - hidden on mobile */
 .nav-right {
     display: none;
     align-items: center;
     gap: 35px;
 }
 
-/* Mobile menu sidebar */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -124,7 +117,7 @@ header {
     left: 0;
 }
 
-/* Mobile search bar */
+/* Search bar mobile */
 .mobile-search {
     position: relative;
     padding: 10px 20px;
@@ -148,7 +141,7 @@ header {
     color: #777;
 }
 
-/* Mobile games section */
+/* Bagian games mobile */
 .mobile-section {
     padding: 0 0 20px;
 }
@@ -178,17 +171,17 @@ header {
     font-size: 10px;
 }
 
-/* Mobile games grid */
+/* Grid games mobile */
 .mobile-games-grid {
     display: flex;
     gap: 10px;
     padding: 15px 20px;
     overflow-x: auto;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
 }
 
 .mobile-games-grid::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
 }
 
 .mobile-game-card {
@@ -204,7 +197,7 @@ header {
     object-fit: cover;
 }
 
-/* Mobile nav links */
+/* Link navigasi mobile */
 .mobile-nav-links {
     list-style: none;
     padding: 0 20px;
@@ -257,7 +250,7 @@ header {
     padding: 5px 0;
 }
 
-/* Mobile footer */
+/* Footer mobile */
 .mobile-footer {
     margin-top: auto;
     padding: 20px;
@@ -282,7 +275,7 @@ header {
     gap: 25px;
 }
 
-/* When menu is open, adjust toggle button */
+/*Tombol toggle */
 .mobile-menu-toggle.active span:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
 }
@@ -297,7 +290,7 @@ header {
 
 /* Hero Section */
 .hero {
-    margin-top: 50px; /* Match mobile header height */
+    margin-top: 50px;
     width: 100%;
     position: relative;
     display: flex;
@@ -389,7 +382,6 @@ header {
     width: 60px;
 }
 
-/* Common components */
 .games-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -462,7 +454,7 @@ header {
 .card-image {
     width: 100%;
     height: 0;
-    padding-bottom: 100%; /* Square aspect ratio for image */
+    padding-bottom: 100%;
     position: relative;
     overflow: hidden;
 }
@@ -508,14 +500,13 @@ header {
     transition: color 0.3s ease;
 }
 
-/* FEATURED GAMES */
+/* Featured Games Section */
 .featured-games {
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 30px;
 }
 
-/* Hero Featured Game */
 .featured-hero {
     width: 100%;
     height: 400px;
@@ -557,7 +548,6 @@ header {
     margin-right: auto;
 }
 
-/* View More Button */
 .view-more-container {
     text-align: center;
     margin-top: 20px;
@@ -598,7 +588,6 @@ header {
     border-radius: 8px;
 }
 
-/* Subscription Section */
 .subscription-section {
     background-color: #000;
     padding: 160px 20px;
@@ -785,10 +774,10 @@ header {
     font-weight: 400;
 }
 
-/* Games dropdown menu */
+
 .games-dropdown {
     position: absolute;
-    top: 50px; /* Match mobile header height */
+    top: 50px;
     left: 0;
     width: 100%;
     background-color: #101010;
@@ -835,15 +824,13 @@ header {
     margin-bottom: 25px;
 }
 
-/* Prevent body scrolling when menu is open */
 body.no-scroll {
     overflow: hidden;
 }
 
-/* Desktop Styles */
 @media (min-width: 769px) {
     body {
-        margin-top: 80px; /* Account for taller desktop header */
+        margin-top: 80px;
     }
 
     .main-nav {
@@ -895,6 +882,10 @@ body.no-scroll {
         display: block;
     }
     
+    .nav-links li a.active::after {
+        display: block;
+    }
+    
     .dropdown-link:hover {
         cursor: pointer;
     }
@@ -929,13 +920,11 @@ body.no-scroll {
         font-size: 18px;
         color: #ffffff;
     }
-    
-    /* Games dropdown positioning for desktop */
+
     .games-dropdown {
         top: 80px;
     }
     
-    /* Hero Section for desktop */
     .hero {
         margin-top: 80px;
     }
@@ -963,12 +952,11 @@ body.no-scroll {
         padding: 20px 70px;
     }
     
-    /* News grid for desktop */
     .news-grid {
         grid-template-columns: repeat(3, 1fr);
     }
     
-    /* Footer for desktop */
+    /* Footer untuk desktop */
     .footer {
         padding: 30px 80px;
     }

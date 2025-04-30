@@ -1,12 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
     initNavbar();
     initMobileMenu();
     initGamesDropdown();
     initHeroSlider();
 });
 
-// Navbar scroll behavior
 function initNavbar() {
     let lastScrollTop = 0;
     const navbar = document.querySelector('header');
@@ -15,7 +13,6 @@ function initNavbar() {
     window.addEventListener('scroll', () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Don't hide navbar when mobile menu is active
         if (document.querySelector('.mobile-menu.active')) {
             return;
         }

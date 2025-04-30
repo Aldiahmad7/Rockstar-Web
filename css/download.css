@@ -20,7 +20,6 @@ body {
     display: none;
 }
 
-/* Layout variables */
 :root {
     --primary-color: #fcaf17;
     --dark-bg: #0b0b0b;
@@ -45,10 +44,9 @@ header {
     align-items: center;
     height: 50px;
     padding: 0 20px;
-    background-color: #000000;
+    background-color: #000;
 }
 
-/* Logo styles */
 .logo {
     text-align: center;
 }
@@ -58,7 +56,7 @@ header {
     vertical-align: middle;
 }
 
-/* Mobile hamburger menu */
+/* Menu hamburger mobile */
 .mobile-menu-toggle {
     display: flex;
     flex-direction: column;
@@ -73,11 +71,10 @@ header {
     display: block;
     width: 100%;
     height: 2px;
-    background-color: #ffffff;
+    background-color: #fff;
     transition: all 0.3s ease;
 }
 
-/* Mobile profile icon */
 .mobile-profile {
     display: flex;
     align-items: center;
@@ -88,7 +85,7 @@ header {
     font-size: 16px;
 }
 
-/* Desktop nav links*/
+/* Link navigasi desktop*/
 .nav-links {
     display: none;
     list-style: none;
@@ -101,7 +98,7 @@ header {
     gap: 35px;
 }
 
-/* Mobile menu sidebar */
+/* Sidebar menu mobile */
 .mobile-menu {
     position: fixed;
     top: 0;
@@ -121,7 +118,6 @@ header {
     left: 0;
 }
 
-/* Mobile search bar */
 .mobile-search {
     position: relative;
     padding: 10px 20px;
@@ -145,7 +141,7 @@ header {
     color: #777;
 }
 
-/* Mobile games section */
+/* Bagian games mobile */
 .mobile-section {
     padding: 0 0 20px;
 }
@@ -175,7 +171,6 @@ header {
     font-size: 10px;
 }
 
-/* Mobile games grid */
 .mobile-games-grid {
     display: flex;
     gap: 10px;
@@ -201,7 +196,7 @@ header {
     object-fit: cover;
 }
 
-/* Mobile nav links */
+/* Link navigasi mobile */
 .mobile-nav-links {
     list-style: none;
     padding: 0 20px;
@@ -233,28 +228,7 @@ header {
     transform: rotate(180deg);
 }
 
-.mobile-submenu {
-    list-style: none;
-    padding-left: 15px;
-    display: none;
-    margin-top: 10px;
-}
-
-.mobile-submenu.active {
-    display: block;
-}
-
-.mobile-submenu li {
-    margin-bottom: 10px;
-}
-
-.mobile-submenu a {
-    font-size: 16px;
-    border-bottom: none;
-    padding: 5px 0;
-}
-
-/* Mobile footer */
+/* Footer mobile */
 .mobile-footer {
     margin-top: auto;
     padding: 20px;
@@ -273,13 +247,6 @@ header {
     margin-bottom: 30px;
 }
 
-.mobile-social {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-/* Mobile menu toggle animation */
 .mobile-menu-toggle.active span:nth-child(1) {
     transform: translateY(6px) rotate(45deg);
 }
@@ -292,98 +259,74 @@ header {
     transform: translateY(-6px) rotate(-45deg);
 }
 
-/* Hero Section */
+/* Section Hero */
 .hero {
-    margin-top: 50px; /* Match mobile header height */
-    width: 100%;
-    position: relative;
-    display: flex;
-}
-
-.hero-content {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    align-items: center;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 30px 20px;
+    position: relative;
 }
 
 .hero-image {
-    flex: 1;
-    overflow: hidden;
-    position: relative;
+    width: 100%;
+    max-width: 280px;
     height: auto;
+    margin-bottom: 20px;
+    border-radius: 0;
+    overflow: hidden;
 }
 
 .hero-image img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
-    transition: opacity 0.5s ease;
+    display: block;
 }
 
-.hero-image img.fade {
-    opacity: 0.7;
-}
-
-.trailer-info {
-    background-color: #000000;
+.hero-text-content {
     width: 100%;
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 15px;
 }
 
-.trailer-text h2 {
-    font-size: 15px;
-    margin-bottom: 10px;
-    font-weight: normal;
-    margin-top: 40px;
-}
-
-.trailer-text h1 {
+.hero-text-content h1 {
     font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.watch-btn {
-    display: inline-block;
-    border: 1px solid #ffffff;
-    padding: 15px 40px;
     font-weight: 600;
-    font-size: 16px;
-    border-radius: 6px;
-    transition: all 0.2s ease;
+    margin: 0;
+}
+
+.hero-text-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.download-btn {
+    display: inline-block;
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 25px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
     text-align: center;
-}
-
-.watch-btn:hover {
-    background-color: #fcaf17;
-    color: #000000;
-    border: 1px solid #fcaf17;
-}
-
-.trailer-nav {
-    padding: 20px 0;
-}
-
-.slider-dots {
-    display: flex;
-    gap: 20px;
-}
-
-.dot {
-    width: 16px;
-    height: 16px;
-    background-color: #444444;
-    border-radius: 20px;
-    cursor: pointer;
+    text-transform: uppercase;
     transition: all 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+    text-decoration: none;
 }
 
-.dot.active {
-    background-color: #ffffff;
-    width: 60px;
+.download-btn:hover {
+    background-color: #fcaf17;
+    border-color: #fcaf17;
+    color: #000000;
 }
 
 .games-grid {
@@ -395,27 +338,43 @@ header {
 }
 
 .game-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.game-image-container {
     overflow: hidden;
     border-radius: 8px;
     transition: transform 0.2s ease;
-    max-width: 100%;
+    width: 100%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    aspect-ratio: 3/4;
+    aspect-ratio: 1/1;
+    margin-bottom: 12px;
 }
 
-.game-card:hover {
+.game-image-container:hover {
     transform: translateY(-5px);
 }
 
-.game-card img {
+.game-image-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
 }
 
-.game-card:hover img {
+.game-image-container:hover img {
     transform: scale(1.05);
+}
+
+.game-title {
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 0;
 }
 
 .section-title {
@@ -425,223 +384,11 @@ header {
     padding-left: 10px;
 }
 
-/* Newswire Section */
-.newswire {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 50px 30px;
-    background-color: #0b0b0b;
-}
-
-.news-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 30px;
-}
-
-.news-card {
-    background-color: #000000;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
-
-.news-card a {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    border-radius: 20px;
-}
-
-.card-image {
-    width: 100%;
-    height: 0;
-    padding-bottom: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.card-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.news-content {
-    padding: 20px;
-    background-color: #0a0a0a;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.news-meta {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-.news-category {
-    color: #fff;
-    font-weight: 500;
-}
-
-.news-date {
-    color: #888;
-}
-
-.news-title {
-    font-size: 22px;
-    font-weight: 400;
-    line-height: 1.3;
-    transition: color 0.3s ease;
-}
-
-/* Featured Games Section */
+/* Section Featured Games */
 .featured-games {
     max-width: 1400px;
     margin: 0 auto;
     padding: 120px 30px;
-}
-
-.featured-hero {
-    width: 100%;
-    height: 400px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.featured-hero img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.featured-hero:hover img {
-    transform: scale(1.02);
-}
-
-.game-logo-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 40px;
-}
-
-.gta-logo {
-    background-image: url('img/gta-logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width: 300px;
-    height: 150px;
-    margin-right: auto;
-}
-
-.view-more-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.view-more-btn {
-    position: relative;
-    display: inline-block;
-    color: white;
-    background-color: transparent;
-    text-decoration: none;
-    font-size: 20px;
-    padding: 10px 20px;
-    overflow: hidden;
-    transition: color 0.3s ease;
-    z-index: 1;
-}
-
-.view-more-btn::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 4px;
-    background-color: #f5a623;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    z-index: -1;
-}
-
-.view-more-btn:hover {
-    color: black;
-}
-
-.view-more-btn:hover::after {
-    height: 100%;
-    border-radius: 8px;
-}
-
-/* Subscription Section */
-.subscription-section {
-    background-color: #000;
-    padding: 160px 20px;
-    text-align: center;
-    background-size: 120px;
-    background-repeat: repeat;
-    background-position: center;
-    background-blend-mode: overlay;
-    position: relative;
-}
-
-.rockstar-logo {
-    margin-bottom: 20px;
-}
-
-.rockstar-logo img {
-    height: 50px;
-}
-
-.subscription-section h2 {
-    font-size: 28px;
-    margin-bottom: 15px;
-    font-weight: 600;
-}
-
-.subscription-section p {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    font-size: 16px;
-    opacity: 0.8;
-}
-
-.subscribe-button {
-    display: inline-block;
-    padding: 15px 30px;
-    border: 1px solid #fff;
-    border-radius: 8px;
-    background: transparent;
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.subscribe-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Footer */
@@ -779,7 +526,6 @@ header {
     font-weight: 400;
 }
 
-/* Games Dropdown Menu */
 .games-dropdown {
     position: absolute;
     top: 50px;
@@ -833,7 +579,7 @@ body.no-scroll {
     overflow: hidden;
 }
 
-/*Desktop Styles */
+/* Style Desktop */
 @media (min-width: 769px) {
     body {
         margin-top: 80px;
@@ -888,8 +634,8 @@ body.no-scroll {
         display: block;
     }
     
-    .dropdown-link:hover {
-        cursor: pointer;
+    .nav-links li a.active::after {
+        display: block;
     }
     
     .dropdown-link i {
@@ -927,39 +673,7 @@ body.no-scroll {
         top: 80px;
     }
     
-    /* Hero Section for desktop */
-    .hero {
-        margin-top: 80px;
-    }
-    
-    .hero-content {
-        flex-direction: row;
-    }
-    
-    .hero-image {
-        flex: 1;
-        height: 100%;
-    }
-    
-    .trailer-info {
-        width: 30%;
-        padding: 40px;
-    }
-    
-    .trailer-text h1 {
-        font-size: 38px;
-        margin-bottom: 30px;
-    }
-    
-    .watch-btn {
-        padding: 20px 70px;
-    }
-    
-    .news-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    /* Footer desktop */
+    /* Footer untuk desktop */
     .footer {
         padding: 30px 80px;
     }
@@ -991,6 +705,44 @@ body.no-scroll {
         flex-direction: row;
         justify-content: space-between;
     }
+    
+    /* Hero section for desktop */
+    .hero {
+        flex-direction: row;
+        justify-content: center;
+        padding: 60px 50px;
+        gap: 50px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        flex: 0 0 auto;
+        width: 140px;
+        height: 140px;
+        margin-bottom: 0;
+        border-radius: 12px;
+    }
+
+    .hero-text-content {
+        flex: 1;
+        max-width: 800px;
+        gap: 20px;
+    }
+
+    .hero-text-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-text-content p {
+        font-size: 16px;
+    }
+
+    .download-btn {
+        width: fit-content;
+        padding: 15px 30px;
+        font-size: 16px;
+    }
 }
 
 @media (min-width: 1025px) {
@@ -1004,14 +756,6 @@ body.no-scroll {
         padding: 0 30px;
     }
     
-    .trailer-info {
-        width: 40%;
-    }
-    
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .games-grid {
         grid-template-columns: repeat(3, 1fr);
     }
@@ -1021,6 +765,24 @@ body.no-scroll {
     .games-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    @media (orientation: landscape) {
+        .hero {
+            flex-direction: row;
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .hero-image {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 0;
+        }
+
+        .hero-text-content h1 {
+            font-size: 24px;
+        }
+    }
 }
 
 @media (max-width: 480px) {
@@ -1028,11 +790,11 @@ body.no-scroll {
         grid-template-columns: 1fr;
     }
     
-    .trailer-text h1 {
-        font-size: 28px;
+    .hero-text-content h1 {
+        font-size: 24px;
     }
-    
-    .watch-btn {
-        padding: 15px 40px;
+
+    .hero-image {
+        max-width: 220px;
     }
 }
