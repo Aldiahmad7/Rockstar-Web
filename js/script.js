@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
     initNavbar();
+    initMobileMenu();
     initGamesDropdown();
     initHeroSlider();
 });
@@ -10,9 +11,14 @@ function initNavbar() {
     let lastScrollTop = 0;
     const navbar = document.querySelector('header');
     const navHeight = navbar.offsetHeight;
-
+    
     window.addEventListener('scroll', () => {
         let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Don't hide navbar when mobile menu is active
+        if (document.querySelector('.mobile-menu.active')) {
+            return;
+        }
         
         // Detect scroll direction
         if (scrollTop > lastScrollTop && scrollTop > navHeight) {
@@ -27,12 +33,26 @@ function initNavbar() {
     });
 }
 
-// Games dropdown functionality
+// Mobile menu initialization
+function initMobileMenu() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll'); // Prevent scrolling when menu is open
+        });
+    }
+}
+
+// Games dropdown functionality for desktop
 function initGamesDropdown() {
     const gamesDropdown = document.querySelector('.dropdown-link');
     const dropdownMenu = document.querySelector('.games-dropdown');
     const dropdownIcon = gamesDropdown.querySelector('i');
-
+    
     if (gamesDropdown) {
         gamesDropdown.addEventListener('click', (e) => {
             e.preventDefault();
@@ -41,7 +61,7 @@ function initGamesDropdown() {
             dropdownIcon.classList.toggle('fa-chevron-down');
         });
     }
-
+    
     // Close dropdown when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.dropdown-link') && !e.target.closest('.games-dropdown')) {
@@ -57,10 +77,12 @@ function initGamesDropdown() {
 // Hero slider functionality
 function initHeroSlider() {
     const dots = document.querySelectorAll('.dot');
+    if (!dots.length) return;
+    
     const heroImage = document.querySelector('.hero-image img');
     const trailerTitle = document.querySelector('.trailer-text h2');
     const trailerSubtitle = document.querySelector('.trailer-text h1');
-
+    
     // Sample image and text data for different slides
     const slides = [
         {
@@ -71,7 +93,7 @@ function initHeroSlider() {
         {
             img: 'img/gta5E.png',
             title: 'Grand Theft Auto V',
-            subtitle: 'Experiencethe Best Version of GTAV ang GTA Online on PC with GTAV Enhanced'
+            subtitle: 'Experience the Best Version of GTAV and GTA Online on PC with GTAV Enhanced'
         },
         {
             img: 'img/gtao.png',
@@ -80,11 +102,11 @@ function initHeroSlider() {
         },
         {
             img: 'img/rdr.png',
-            title: 'Red Dead Redemtion',
+            title: 'Red Dead Redemption',
             subtitle: 'Now on PC'
         }
     ];
-
+    
     // Add click event to each dot
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
@@ -93,15 +115,17 @@ function initHeroSlider() {
             dot.classList.add('active');
             
             // Update content
-            heroImage.src = slides[index].img;
-            trailerTitle.textContent = slides[index].title;
-            trailerSubtitle.textContent = slides[index].subtitle;
+            if (heroImage) heroImage.src = slides[index].img;
+            if (trailerTitle) trailerTitle.textContent = slides[index].title;
+            if (trailerSubtitle) trailerSubtitle.textContent = slides[index].subtitle;
             
             // Optional: Add fade animation
-            heroImage.classList.add('fade');
-            setTimeout(() => {
-                heroImage.classList.remove('fade');
-            }, 500);
+            if (heroImage) {
+                heroImage.classList.add('fade');
+                setTimeout(() => {
+                    heroImage.classList.remove('fade');
+                }, 500);
+            }
         });
     });
 }
